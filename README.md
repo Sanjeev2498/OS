@@ -15,6 +15,10 @@ This repository contains college-level Operating System lab assignments implemen
 - **task4_simple.py** - Scheduling metrics, threading, and IPC
 - **README.md** - Detailed documentation for LAB2
 
+### Multithreading, Synchronization & Deadlock
+- **task1_thread_creation_models.py** - Thread creation, models and benefits
+- **README.md** - Comprehensive threading concepts documentation
+
 ## Features Implemented
 
 ### ✅ Process Scheduling Algorithms
@@ -70,6 +74,9 @@ This repository contains college-level Operating System lab assignments implemen
    python LAB2/task2_fcfs_sjf_simple.py
    python LAB2/task3_priority_rr_simple.py
    python LAB2/task4_simple.py
+   
+   # Multithreading & Synchronization
+   python multithread_sync_deadlock/task1_thread_creation_models.py
    ```
 
 3. Follow interactive prompts for process input or use default test data
