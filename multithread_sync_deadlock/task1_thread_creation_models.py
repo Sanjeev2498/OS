@@ -224,116 +224,37 @@ def compare_performance(single_time, multi_time):
 
 def explain_threading_concepts():
     """
-    Explain threading models and concepts
+    Brief explanation of threading models and concepts
     """
-    print("\n" + "=" * 70)
-    print("THREADING MODELS AND CONCEPTS EXPLANATION")
-    print("=" * 70)
+    print("\n" + "=" * 50)
+    print("THREADING CONCEPTS SUMMARY")
+    print("=" * 50)
     
-    print("\n1. THREAD MODELS:")
-    print("-" * 40)
+    print("\n🔹 THREAD MODELS:")
+    print("   • User-level: Fast switching, library-managed")
+    print("   • Kernel-level: OS-managed, true parallelism") 
+    print("   • Hybrid: M:N mapping, balanced approach")
     
-    print("\n🔹 USER-LEVEL THREADS:")
-    print("   • Managed by user-space libraries (not OS)")
-    print("   • Faster context switching")
-    print("   • No kernel involvement in thread management")
-    print("   • Disadvantage: Blocking system calls block entire process")
-    print("   • Example: Python threads (due to GIL)")
-    
-    print("\n🔹 KERNEL-LEVEL THREADS:")
-    print("   • Managed directly by the operating system")
-    print("   • OS kernel schedules threads individually")
-    print("   • True parallelism on multicore systems")
-    print("   • Slower context switching (kernel involvement)")
-    print("   • Example: Windows threads, Linux pthreads")
-    
-    print("\n🔹 HYBRID/COMBINED MODEL:")
-    print("   • Combination of user-level and kernel-level threads")
-    print("   • M:N mapping (M user threads to N kernel threads)")
-    print("   • Balances performance and functionality")
-    print("   • Example: Java Green Threads (older versions)")
-    
-    print("\n2. MULTITHREADING MODELS:")
-    print("-" * 40)
-    
-    print("\n🔸 Many-to-One Model:")
-    print("   • Multiple user threads map to single kernel thread")
-    print("   • Thread management in user space")
-    print("   • No true parallelism")
-    
-    print("\n🔸 One-to-One Model:")
-    print("   • Each user thread maps to kernel thread")
-    print("   • True parallelism")
-    print("   • Higher overhead")
-    
-    print("\n🔸 Many-to-Many Model:")
-    print("   • Multiple user threads map to smaller/equal number of kernel threads")
-    print("   • Best of both worlds")
-    print("   • Most complex to implement")
+    print("\n🔸 MULTITHREADING MODELS:")
+    print("   • Many-to-One: Multiple user → single kernel thread")
+    print("   • One-to-One: Direct mapping, higher overhead")
+    print("   • Many-to-Many: Flexible mapping, complex")
 
 def explain_threading_benefits_challenges():
     """
-    Explain threading benefits and challenges
+    Brief explanation of threading benefits and challenges
     """
-    print("\n3. THREADING BENEFITS:")
-    print("-" * 40)
+    print("\n✅ THREADING BENEFITS:")
+    print("   • Responsiveness: Non-blocking execution")
+    print("   • Resource Sharing: Efficient memory usage")
+    print("   • Concurrency: Simultaneous task progress")
+    print("   • Parallelism: Multi-core utilization")
     
-    print("\n✅ RESPONSIVENESS:")
-    print("   • User interface remains responsive during long operations")
-    print("   • Background tasks don't block main thread")
-    print("   • Example: Web browser downloads while browsing")
-    
-    print("\n✅ RESOURCE SHARING:")
-    print("   • Threads share memory space, file handles, and resources")
-    print("   • More efficient than separate processes")
-    print("   • Easier data sharing between concurrent tasks")
-    
-    print("\n✅ CONCURRENCY:")
-    print("   • Multiple tasks can make progress simultaneously")
-    print("   • Better resource utilization")
-    print("   • Improved throughput for I/O bound tasks")
-    
-    print("\n✅ PARALLELISM:")
-    print("   • True parallel execution on multicore systems")
-    print("   • CPU-intensive tasks can use multiple cores")
-    print("   • Significant speedup for suitable workloads")
-    
-    print("\n4. THREADING CHALLENGES:")
-    print("-" * 40)
-    
-    print("\n❌ RACE CONDITIONS:")
-    print("   • Multiple threads accessing shared data concurrently")
-    print("   • Results depend on timing/execution order")
-    print("   • Can cause data corruption or inconsistent state")
-    print("   • Solution: Synchronization mechanisms (locks, semaphores)")
-    
-    print("\n❌ DEADLOCKS:")
-    print("   • Two or more threads waiting for each other")
-    print("   • Circular dependency on resources")
-    print("   • System becomes unresponsive")
-    print("   • Solution: Proper lock ordering, timeout mechanisms")
-    
-    print("\n❌ OVERHEAD:")
-    print("   • Context switching costs")
-    print("   • Memory overhead for thread stacks")
-    print("   • Synchronization overhead")
-    print("   • May outweigh benefits for small tasks")
-    
-    print("\n5. PYTHON-SPECIFIC CONSIDERATIONS:")
-    print("-" * 40)
-    
-    print("\n🐍 GLOBAL INTERPRETER LOCK (GIL):")
-    print("   • Python's GIL prevents true CPU parallelism")
-    print("   • Only one thread executes Python bytecode at a time")
-    print("   • Threading still beneficial for I/O-bound tasks")
-    print("   • Use multiprocessing for CPU-bound parallelism")
-    
-    print("\n💡 BEST PRACTICES:")
-    print("   • Use threading for I/O-bound tasks")
-    print("   • Use multiprocessing for CPU-bound tasks")
-    print("   • Minimize shared state")
-    print("   • Use proper synchronization mechanisms")
-    print("   • Consider thread pools for task management")
+    print("\n❌ THREADING CHALLENGES:")
+    print("   • Race Conditions: Shared data conflicts")
+    print("   • Deadlocks: Circular waiting scenarios")
+    print("   • Overhead: Context switching costs")
+    print("   • Python GIL: Limits CPU parallelism")
 
 def main():
     """

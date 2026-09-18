@@ -1,0 +1,224 @@
+OPERATING SYSTEM LAB ASSIGNMENT
+TASK 1: THREAD CREATION, MODELS AND BENEFITS
+
+Student Name: Sanjeev
+Course: Operating Systems
+Assignment: Multithreading, Synchronization and Deadlock
+
+=============================================================================
+1. OBJECTIVE
+=============================================================================
+Demonstrate thread creation, models, and benefits by implementing:
+- Single-threaded baseline workload
+- Multi-threaded parallel implementation
+- Performance comparison and analysis
+- Threading concepts explanation
+
+=============================================================================
+2. CODE IMPLEMENTATION
+=============================================================================
+
+FILE: task1_thread_creation_models.py
+
+[MAIN FUNCTIONS IMPLEMENTED:]
+
+A) cpu_intensive_task() - Prime number calculation
+B) single_threaded_baseline() - Sequential execution
+C) multithreaded_implementation() - Parallel execution with 5 threads
+D) Performance comparison and analysis functions
+
+[KEY CODE SNIPPETS:]
+
+Thread Creation:
+```python
+for i, data_chunk in enumerate(workload):
+    thread = threading.Thread(
+        target=cpu_intensive_task,
+        args=(task_id, data_chunk, results),
+        name=f"Worker-{i+1}"
+    )
+    threads.append(thread)
+    thread.start()
+```
+
+Thread Synchronization:
+```python
+with progress_lock:
+    progress_data[task_id] = {"status": "started", "thread_id": thread_id}
+```
+
+Thread Management:
+```python
+for thread in threads:
+    thread.join()
+```
+
+=============================================================================
+3. PROGRAM OUTPUT
+=============================================================================
+
+SINGLE-THREADED EXECUTION:
+============================================================
+Main Thread ID: 936
+Processing 5 tasks sequentially...
+
+Task-1 (1-1000): Found 168 primes
+Task-2 (1001-2000): Found 135 primes  
+Task-3 (2001-3000): Found 127 primes
+Task-4 (3001-4000): Found 120 primes
+Task-5 (4001-5000): Found 119 primes
+
+RESULTS: 0.52 seconds, 669 total primes
+
+MULTITHREADED EXECUTION:
+============================================================
+Created 5 worker threads: Worker-1 to Worker-5
+
+Thread Execution Details:
+Worker-1 (ID: 7600)  - Range 1-1000    - 168 primes
+Worker-2 (ID: 17992) - Range 1001-2000 - 135 primes
+Worker-3 (ID: 15500) - Range 2001-3000 - 127 primes
+Worker-4 (ID: 2596)  - Range 3001-4000 - 120 primes
+Worker-5 (ID: 10200) - Range 4001-5000 - 119 primes
+
+RESULTS: 0.51 seconds, 669 total primes
+
+PERFORMANCE COMPARISON:
+============================================================
+Single-threaded time: 0.52 seconds
+Multithreaded time:   0.51 seconds
+Speedup:             1.02x
+Efficiency:          20.4%
+Performance improvement: 1.8%
+
+=============================================================================
+4. THREADING MODELS EXPLAINED
+=============================================================================
+
+USER-LEVEL THREADS:
+- Managed by user-space libraries
+- Fast context switching
+- No kernel involvement
+- Example: Python threads (GIL affected)
+
+KERNEL-LEVEL THREADS:
+- Managed by operating system
+- True parallelism on multicore
+- Higher overhead
+- Examples: Windows threads, Linux pthreads
+
+HYBRID MODEL:
+- M:N mapping (M user threads to N kernel threads)
+- Balances performance and functionality
+- Complex implementation
+
+MULTITHREADING MODELS:
+- Many-to-One: Multiple user → single kernel thread
+- One-to-One: Direct mapping, true parallelism  
+- Many-to-Many: Flexible mapping, best performance
+
+=============================================================================
+5. THREADING BENEFITS
+=============================================================================
+
+RESPONSIVENESS:
+- Non-blocking user interfaces
+- Background task execution
+- Better user experience
+
+RESOURCE SHARING:
+- Shared memory space
+- Efficient data communication
+- Lower overhead than processes
+
+CONCURRENCY:
+- Simultaneous task progress
+- Better resource utilization
+- Improved system throughput
+
+PARALLELISM:
+- Multi-core utilization
+- True parallel execution
+- Significant speedup potential
+
+=============================================================================
+6. THREADING CHALLENGES
+=============================================================================
+
+RACE CONDITIONS:
+- Concurrent access to shared data
+- Unpredictable results
+- Solution: Locks, semaphores
+
+DEADLOCKS:
+- Circular waiting for resources
+- System becomes unresponsive
+- Solution: Proper lock ordering
+
+OVERHEAD:
+- Context switching costs
+- Thread management overhead
+- Synchronization penalties
+
+PYTHON GIL:
+- Prevents true CPU parallelism
+- Only one thread executes bytecode
+- Better for I/O-bound tasks
+
+=============================================================================
+7. RESULTS ANALYSIS
+=============================================================================
+
+THREAD IDENTIFIERS DISPLAYED:
+✓ Main thread ID: 936
+✓ Worker thread IDs: 7600, 17992, 15500, 2596, 10200
+✓ Thread names: Worker-1 through Worker-5
+
+EXECUTION PROGRESS TRACKED:
+✓ Real-time percentage completion
+✓ Thread status monitoring  
+✓ Task completion verification
+
+PERFORMANCE MEASURED:
+✓ Single-threaded baseline: 0.52s
+✓ Multithreaded execution: 0.51s
+✓ Speedup achieved: 1.02x (limited by Python GIL)
+
+WORKLOAD VERIFICATION:
+✓ Same total computation: 669 primes
+✓ Correct task division: 5 equal ranges
+✓ Independent task execution
+
+=============================================================================
+8. CONCLUSION
+=============================================================================
+
+REQUIREMENTS FULFILLED:
+✓ Single-threaded baseline created
+✓ Workload divided into independent tasks  
+✓ Multiple worker threads implemented
+✓ Thread identifiers and progress displayed
+✓ All threads completed successfully
+✓ Execution times measured and compared
+✓ Threading models and concepts explained
+✓ Benefits and challenges discussed
+
+KEY LEARNING OUTCOMES:
+- Thread lifecycle management
+- Performance implications of threading
+- Python GIL impact on CPU-bound tasks
+- Proper synchronization techniques
+- Threading vs multiprocessing considerations
+
+PRACTICAL INSIGHTS:
+- Threading provides organizational benefits even with limited speedup
+- I/O-bound tasks show better threading performance
+- Proper design crucial for threading effectiveness
+- Understanding platform limitations important
+
+=============================================================================
+END OF SUBMISSION
+=============================================================================
+
+GITHUB REPOSITORY: https://github.com/Sanjeev2498/OS
+FILE LOCATION: multithread_sync_deadlock/task1_thread_creation_models.py
