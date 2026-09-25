@@ -28,13 +28,28 @@ This folder contains advanced Operating System concepts focusing on multithreadi
 
 **Run with:** `python task1_thread_creation_models.py`
 
-### 2. task2_synchronization_mechanisms.py (Coming Soon)
-**Thread Synchronization and Communication**
-- Mutex locks and critical sections
-- Semaphores and condition variables
-- Producer-consumer problem implementation
-- Reader-writer problem solutions
-- Thread-safe data structures
+### 2. task2_race_condition_lock_semaphore.py ✅
+**Race Condition, Lock and Semaphore (5 marks)**
+- Creates shared data (counter, balance, operations list) accessible by multiple threads
+- Demonstrates race conditions without synchronization protection
+- Shows timing-dependent behavior through multiple execution runs
+- Corrects race conditions using Lock-based mutual exclusion
+- Implements Semaphore-based synchronization version
+- Uses identical workload for all three versions (unprotected, lock, semaphore)
+- Measures and compares execution times for performance analysis
+- Analyzes correctness and synchronization overhead
+
+**Features Demonstrated:**
+- ✅ Shared data structures with concurrent access
+- ✅ Race condition demonstration with inconsistent results
+- ✅ Timing-dependent behavior verification (100% race detection rate)
+- ✅ Lock-based synchronization with perfect correctness
+- ✅ Semaphore-based synchronization with perfect correctness
+- ✅ Performance comparison: Unprotected (fastest) vs Lock (+77% overhead) vs Semaphore (+462% overhead)
+- ✅ Correctness analysis: Unprotected (incorrect) vs Synchronized (correct)
+- ✅ Synchronization concepts explanation
+
+**Run with:** `python task2_race_condition_lock_semaphore.py`
 
 ### 3. task3_deadlock_detection_prevention.py (Coming Soon)
 **Deadlock Detection and Prevention**
