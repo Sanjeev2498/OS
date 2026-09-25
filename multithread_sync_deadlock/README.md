@@ -51,13 +51,30 @@ This folder contains advanced Operating System concepts focusing on multithreadi
 
 **Run with:** `python task2_race_condition_lock_semaphore.py`
 
-### 3. task3_deadlock_detection_prevention.py (Coming Soon)
-**Deadlock Detection and Prevention**
-- Deadlock simulation and detection
-- Resource allocation graphs
-- Banker's algorithm implementation
-- Deadlock prevention strategies
-- Recovery mechanisms
+**Simple Version:** `task2_simple_race_condition.py` - Easier demonstration with 3 threads
+
+### 3. task3_classical_sync_problems.py ✅
+**Classical Synchronization Problems (5 marks)**
+- Implements Producer-Consumer problem with bounded buffer
+- Demonstrates Readers-Writers problem with concurrent access control
+- Solves Dining Philosophers problem with deadlock prevention
+- Uses semaphores, locks, and proper synchronization techniques
+- Shows real-time execution with clear output formatting
+
+**Features Demonstrated:**
+- ✅ **Producer-Consumer**: Multiple producers/consumers with bounded buffer (size 5)
+- ✅ **Readers-Writers**: Concurrent readers, exclusive writers with proper coordination
+- ✅ **Dining Philosophers**: 5 philosophers with deadlock prevention using waiter + resource ordering
+- ✅ **Synchronization**: Semaphores (empty, full, mutex), Locks (read/write control, chopsticks)
+- ✅ **Deadlock Prevention**: Waiter mechanism limits concurrent diners to prevent circular wait
+- ✅ **Clean Termination**: Finite execution with proper thread cleanup
+
+**Synchronization Mechanisms:**
+- **Producer-Consumer**: `empty` semaphore (5), `full` semaphore (0), `mutex` lock
+- **Readers-Writers**: `read_count_lock`, `write_lock` for exclusive/shared access
+- **Dining Philosophers**: Individual chopstick locks + waiter semaphore (4/5 limit)
+
+**Run with:** `python task3_classical_sync_problems.py`
 
 ## Current Implementation Status
 
@@ -68,6 +85,21 @@ This folder contains advanced Operating System concepts focusing on multithreadi
 - Multithreaded (5 threads): ~0.51 seconds  
 - Speedup: ~1.02x (limited by Python GIL for CPU-bound tasks)
 - Total computation: 669 prime numbers found
+
+### ✅ **Task 2 - Race Conditions & Synchronization**
+**Workload:** Concurrent counter operations (10,000 per thread)
+**Results:**
+- Unprotected: 100% race condition detection (incorrect results)
+- Lock-protected: Perfect synchronization (correct results, +77% overhead)
+- Semaphore-protected: Perfect synchronization (correct results, +462% overhead)
+
+### ✅ **Task 3 - Classical Synchronization Problems**
+**Implementation:** All three classical problems with proper synchronization
+**Results:**
+- **Producer-Consumer**: 5 producers, 5 consumers, bounded buffer (5 items)
+- **Readers-Writers**: 3 readers, 2 writers with exclusive write access
+- **Dining Philosophers**: 5 philosophers with deadlock prevention (waiter mechanism)
+- All problems execute concurrently with clean termination
 
 **Key Learning Points:**
 - Python's GIL limits CPU-bound threading benefits
