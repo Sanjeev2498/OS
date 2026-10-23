@@ -2,7 +2,7 @@
 
 **Course:** Operating Systems  
 **Lab:** Advanced Threading Concepts  
-**Total Marks:** 15 (3 tasks × 5 marks each)
+**Total Marks:** 20 (4 tasks × 5 marks each)
 
 ## ✅ Task 1: Thread Creation, Models and Benefits (5 marks)
 **File:** `task1_thread_creation_models.py`
@@ -78,6 +78,66 @@
 
 ---
 
+## ✅ Task 4: Deadlock Handling and Banker's Algorithm (5 marks)
+**File:** `task4_deadlock_bankers_algorithm.py`
+
+### Implementation Features:
+- Controlled circular-wait deadlock scenario (4 threads, 4 resources)
+- Identification of all four necessary deadlock conditions
+- Deadlock prevention using resource ordering strategy
+- Complete Banker's Algorithm implementation
+- Need matrix calculation from Allocation and Maximum matrices
+- Safe state detection with safe sequence generation
+- Unsafe state detection and reporting
+- Deadlock detection using timeout mechanism
+- Recovery strategies (resource release, thread termination)
+
+### Three Main Parts:
+
+#### Part 1: Circular-Wait Deadlock
+- **Deadlock Scenario**: T0→R0→R1, T1→R1→R2, T2→R2→R3, T3→R3→R0 (circular chain)
+- **Four Conditions Identified**:
+  1. **Mutual Exclusion**: Locks held exclusively by one thread
+  2. **Hold and Wait**: Threads hold resources while waiting for others
+  3. **No Preemption**: Resources released voluntarily only
+  4. **Circular Wait**: Circular dependency chain creates deadlock
+- **Prevention**: Resource ordering (always acquire in ascending order) breaks circular wait
+
+#### Part 2: Banker's Algorithm
+- **Example 1 (Safe State)**: 5 processes, 3 resource types
+  - Safe Sequence Found: P1 → P3 → P0 → P2 → P4
+  - All processes can complete without deadlock
+- **Example 2 (Unsafe State)**: 4 processes, 3 resource types
+  - No safe sequence exists (insufficient resources)
+  - System reports unsafe state, requests denied
+
+#### Part 3: Deadlock Detection & Recovery
+- **Detection**: Timeout-based mechanism (acquire with timeout)
+- **Recovery**: Automatic resource release upon deadlock detection
+- **Strategies**: Resource release, retry capability, thread termination option
+
+### Banker's Algorithm Details:
+- **Input Matrices**:
+  - Allocation[i][j]: Currently allocated resources
+  - Maximum[i][j]: Maximum resource needs
+  - Available[j]: Currently available resources
+- **Calculated Matrix**:
+  - Need[i][j] = Maximum[i][j] - Allocation[i][j]
+- **Safety Algorithm**:
+  - Iteratively find processes where Need[i] ≤ Available
+  - Simulate completion and resource release
+  - Generate safe sequence or report unsafe state
+
+### Results:
+- **Deadlock Created**: Circular wait successfully demonstrated
+- **Prevention Success**: Resource ordering eliminated deadlock (100%)
+- **Safe State**: Correctly identified with valid safe sequence
+- **Unsafe State**: Correctly detected when resources insufficient
+- **Detection**: Timeout mechanism caught deadlock (3/3 threads)
+- **Recovery**: All threads released resources and terminated cleanly
+
+---
+
 ## Technical Specifications
 
 ### Environment:
@@ -108,6 +168,7 @@ python task1_thread_creation_models.py
 python task2_race_condition_lock_semaphore.py  
 python task2_simple_race_condition.py
 python task3_classical_sync_problems.py
+python task4_deadlock_bankers_algorithm.py
 ```
 
 ## Expected Learning Assessment
@@ -117,5 +178,6 @@ Each task demonstrates mastery of core OS threading concepts:
 - **Task 1:** Understanding threading models and benefits
 - **Task 2:** Race condition identification and prevention
 - **Task 3:** Classical synchronization problem solutions
+- **Task 4:** Deadlock handling, prevention, avoidance, detection, and recovery
 
-**Total Implementation:** 4 complete Python files with comprehensive threading demonstrations suitable for advanced Operating Systems coursework.
+**Total Implementation:** 5 complete Python files (including simplified version) with comprehensive threading and deadlock demonstrations suitable for advanced Operating Systems coursework.

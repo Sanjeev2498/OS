@@ -76,6 +76,34 @@ This folder contains advanced Operating System concepts focusing on multithreadi
 
 **Run with:** `python task3_classical_sync_problems.py`
 
+### 4. task4_deadlock_bankers_algorithm.py ✅
+**Deadlock Handling and Banker's Algorithm (5 marks)**
+- Creates controlled circular-wait deadlock scenario with timeout recovery
+- Identifies all four necessary conditions for deadlock
+- Demonstrates deadlock prevention using resource ordering
+- Implements complete Banker's Algorithm for deadlock avoidance
+- Calculates Need matrix from Allocation and Maximum matrices
+- Detects safe vs unsafe states with safe sequence generation
+- Includes deadlock detection and recovery mechanisms
+
+**Features Demonstrated:**
+- ✅ **Circular-Wait Deadlock**: 4 threads with circular resource dependencies (T0→R1→T1→R2→T2→R3→T3→R0)
+- ✅ **Four Conditions**: Mutual Exclusion, Hold & Wait, No Preemption, Circular Wait all identified
+- ✅ **Prevention**: Resource ordering breaks circular wait condition
+- ✅ **Banker's Algorithm**: Complete implementation with Need matrix calculation
+- ✅ **Safe State Detection**: Safe sequence (P1→P3→P0→P2→P4) for Example 1
+- ✅ **Unsafe State Detection**: Demonstrates system unable to find safe sequence
+- ✅ **Deadlock Detection**: Timeout-based detection mechanism
+- ✅ **Recovery Strategies**: Resource release and thread termination
+
+**Banker's Algorithm Components:**
+- **Input**: Allocation matrix, Maximum matrix, Available resources vector
+- **Calculation**: Need[i][j] = Maximum[i][j] - Allocation[i][j]
+- **Safety Algorithm**: Iteratively finds processes that can complete
+- **Output**: Safe sequence or unsafe state declaration
+
+**Run with:** `python task4_deadlock_bankers_algorithm.py`
+
 ## Current Implementation Status
 
 ### ✅ **Task 1 - Thread Creation & Models**
@@ -96,10 +124,19 @@ This folder contains advanced Operating System concepts focusing on multithreadi
 ### ✅ **Task 3 - Classical Synchronization Problems**
 **Implementation:** All three classical problems with proper synchronization
 **Results:**
-- **Producer-Consumer**: 5 producers, 5 consumers, bounded buffer (5 items)
+- **Producer-Consumer**: 2 producers, 2 consumers, circular buffer (5 items)
 - **Readers-Writers**: 3 readers, 2 writers with exclusive write access
 - **Dining Philosophers**: 5 philosophers with deadlock prevention (waiter mechanism)
 - All problems execute concurrently with clean termination
+
+### ✅ **Task 4 - Deadlock Handling & Banker's Algorithm**
+**Implementation:** Complete deadlock scenarios with prevention, avoidance, detection, and recovery
+**Results:**
+- **Circular-Wait Deadlock**: 4 threads demonstrating all four necessary conditions
+- **Prevention**: Resource ordering eliminates deadlock (100% success rate)
+- **Banker's Algorithm Example 1**: SAFE state with sequence P1→P3→P0→P2→P4
+- **Banker's Algorithm Example 2**: UNSAFE state detected (no safe sequence)
+- **Detection & Recovery**: Timeout-based detection with automatic resource release
 
 **Key Learning Points:**
 - Python's GIL limits CPU-bound threading benefits
