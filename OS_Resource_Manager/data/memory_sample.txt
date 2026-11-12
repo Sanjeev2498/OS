@@ -1,0 +1,9 @@
+# Sample Memory Data
+# Memory Blocks (KB):
+100, 500, 200, 300, 600
+
+# Processes (ProcessID, Size in KB):
+P1, 212
+P2, 417
+P3, 112
+P4, 426
