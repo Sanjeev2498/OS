@@ -2,7 +2,7 @@
 
 **Course:** Operating Systems  
 **Lab:** Advanced Threading Concepts  
-**Total Marks:** 20 (4 tasks × 5 marks each)
+**Total Marks:** 35 (7 tasks × 5 marks each)
 
 ## ✅ Task 1: Thread Creation, Models and Benefits (5 marks)
 **File:** `task1_thread_creation_models.py`
@@ -116,6 +116,36 @@
 - **Recovery**: Automatic resource release upon deadlock detection
 - **Strategies**: Resource release, retry capability, thread termination option
 
+---
+
+## ✅ Task 5: Paging and Segmentation (5 marks)
+**File:** `task5_paging_segmentation.py`
+
+- Calculates page number and offset from the logical address and page size
+- Validates mapped page-table entries and rejects unmapped or out-of-range pages
+- Validates segment offsets using the segment limit
+- Calculates and displays both paging and segmentation physical addresses with intermediate steps
+
+---
+
+## ✅ Task 6: Demand Paging, Page Replacement and Thrashing (5 marks)
+**File:** `task6_demand_paging_replacement.py`
+
+- Runs FIFO, LRU, and Optimal on identical page references and frame counts
+- Displays hit/fault classification and frame state after each reference
+- Calculates hit/fault totals and ratios, and compares algorithm results
+- Repeats with multiple frame counts and identifies a cyclic high-fault case as a simplified thrashing example
+
+---
+
+## ✅ Task 7: Contiguous Allocation, Swapping and Address Translation (5 marks)
+**File:** `task7_contiguous_allocation_swapping.py`
+
+- Implements First Fit, Best Fit, and Worst Fit using fresh memory data for each method
+- Displays process allocations, unallocated processes, and remaining block sizes
+- Validates the logical address against the limit and calculates the physical address
+- Simulates releasing an outgoing process and allocating an incoming process, showing memory before and after
+
 ### Banker's Algorithm Details:
 - **Input Matrices**:
   - Allocation[i][j]: Currently allocated resources
@@ -169,6 +199,9 @@ python task2_race_condition_lock_semaphore.py
 python task2_simple_race_condition.py
 python task3_classical_sync_problems.py
 python task4_deadlock_bankers_algorithm.py
+python task5_paging_segmentation.py
+python task6_demand_paging_replacement.py
+python task7_contiguous_allocation_swapping.py
 ```
 
 ## Expected Learning Assessment
@@ -179,5 +212,8 @@ Each task demonstrates mastery of core OS threading concepts:
 - **Task 2:** Race condition identification and prevention
 - **Task 3:** Classical synchronization problem solutions
 - **Task 4:** Deadlock handling, prevention, avoidance, detection, and recovery
+- **Task 5:** Paging and segmentation address translation
+- **Task 6:** Demand paging, replacement policies, and page-fault comparison
+- **Task 7:** Contiguous allocation, swapping, and address translation
 
-**Total Implementation:** 5 complete Python files (including simplified version) with comprehensive threading and deadlock demonstrations suitable for advanced Operating Systems coursework.
+**Total Implementation:** 8 Python files covering seven tasks (including the simplified Task 2 version), with threading, synchronization, deadlock, and memory-management demonstrations.

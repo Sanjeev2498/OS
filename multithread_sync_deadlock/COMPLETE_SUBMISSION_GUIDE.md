@@ -1,10 +1,10 @@
 # Complete OS Lab Submission Guide
-## Multithreading, Synchronization, and Deadlock
+## Operating Systems Lab Tasks
 
 **Repository:** https://github.com/Sanjeev2498/OS  
 **Folder:** `multithread_sync_deadlock/`  
-**Total Marks:** 20 (4 tasks × 5 marks each)  
-**Status:** ✅ All tasks completed, tested, and pushed to GitHub
+**Total Marks:** 35 (7 tasks × 5 marks each)
+**Status:** Tasks 1–7 implemented; see the testing status below.
 
 ---
 
@@ -109,6 +109,33 @@
 
 ---
 
+### ✅ Task 5: Paging and Segmentation (5 marks)
+**File:** `task5_paging_segmentation.py`
+
+- Calculates page number, offset, and physical address from page-table entries
+- Rejects unmapped or out-of-range pages
+- Validates segment references against the limit and displays address calculations
+
+---
+
+### ✅ Task 6: Demand Paging, Page Replacement and Thrashing (5 marks)
+**File:** `task6_demand_paging_replacement.py`
+
+- Compares FIFO, LRU, and Optimal using identical page references
+- Displays each reference's hit/fault and frame state, plus totals and ratios
+- Repeats across frame counts and includes a simplified cyclic thrashing example
+
+---
+
+### ✅ Task 7: Contiguous Allocation, Swapping and Address Translation (5 marks)
+**File:** `task7_contiguous_allocation_swapping.py`
+
+- Compares First Fit, Best Fit, and Worst Fit using fresh memory for each method
+- Reports process allocation and remaining block sizes
+- Validates base/limit address translation and simulates swapping with before/after state
+
+---
+
 ## 🚀 How to Run
 
 ### Run Individual Tasks:
@@ -129,6 +156,15 @@ python task3_classical_sync_problems.py
 
 # Task 4: Deadlock & Banker's Algorithm
 python task4_deadlock_bankers_algorithm.py
+
+# Task 5: Paging and Segmentation
+python task5_paging_segmentation.py
+
+# Task 6: Demand Paging and Replacement
+python task6_demand_paging_replacement.py
+
+# Task 7: Contiguous Allocation and Swapping
+python task7_contiguous_allocation_swapping.py
 ```
 
 ### Expected Output:
@@ -193,6 +229,12 @@ python task4_deadlock_bankers_algorithm.py
 - Readers-Writers (shared access)
 - Dining Philosophers (resource allocation)
 
+### Memory Management:
+- Paging and segmentation address translation
+- FIFO, LRU, and Optimal page replacement
+- First Fit, Best Fit, and Worst Fit contiguous allocation
+- Swapping and memory-state tracking
+
 ---
 
 ## 🎯 Learning Outcomes Achieved
@@ -205,6 +247,7 @@ python task4_deadlock_bankers_algorithm.py
 6. ✅ **Banker's Algorithm:** Implemented complete safe state verification
 7. ✅ **Performance Analysis:** Measured and compared synchronization overhead
 8. ✅ **Resource Management:** Proper acquisition, release, and cleanup
+9. ✅ **Memory Management:** Address translation, page replacement, allocation, and swapping
 
 ---
 
@@ -216,6 +259,9 @@ python task4_deadlock_bankers_algorithm.py
 - ✅ `task2_simple_race_condition.py`
 - ✅ `task3_classical_sync_problems.py`
 - ✅ `task4_deadlock_bankers_algorithm.py`
+- ✅ `task5_paging_segmentation.py`
+- ✅ `task6_demand_paging_replacement.py`
+- ✅ `task7_contiguous_allocation_swapping.py`
 - ✅ `README.md` (comprehensive documentation)
 - ✅ `FINAL_SUBMISSION.md` (submission guide)
 - ✅ `COMPLETE_SUBMISSION_GUIDE.md` (this file)
@@ -234,6 +280,7 @@ python task4_deadlock_bankers_algorithm.py
 - ✅ Task 2: Tested successfully (100% race detection)
 - ✅ Task 3: Tested successfully (all 3 problems work)
 - ✅ Task 4: Tested successfully (deadlock detected & recovered)
+- ✅ Tasks 5–7: Added paging/segmentation, page replacement, and contiguous allocation demonstrations
 
 ---
 
@@ -255,6 +302,9 @@ OS/
     ├── task2_simple_race_condition.py
     ├── task3_classical_sync_problems.py
     ├── task4_deadlock_bankers_algorithm.py
+    ├── task5_paging_segmentation.py
+    ├── task6_demand_paging_replacement.py
+    ├── task7_contiguous_allocation_swapping.py
     ├── README.md
     ├── FINAL_SUBMISSION.md
     └── COMPLETE_SUBMISSION_GUIDE.md
@@ -264,12 +314,15 @@ OS/
 
 ## 💡 Tips for Demonstration
 
-1. **Run tasks in order** (1 → 2 → 3 → 4) for logical progression
+1. **Run tasks in order** (1 → 7) for logical progression
 2. **Highlight key outputs:**
    - Task 1: Performance comparison
    - Task 2: Race condition detection (100% rate)
    - Task 3: All three classical problems
    - Task 4: Safe sequence from Banker's Algorithm
+   - Task 5: Page/segment address calculations
+   - Task 6: Replacement traces and page-fault comparison
+   - Task 7: Allocation decisions and swapping state
 3. **Explain concepts** using the program output
 4. **Show deadlock prevention** success in Task 4
 5. **Demonstrate recovery** mechanisms in deadlock scenarios
@@ -280,7 +333,7 @@ OS/
 
 ### What Makes This Implementation Stand Out:
 
-1. **Complete Coverage:** All 20 marks worth of requirements implemented
+1. **Complete Coverage:** All 35 marks worth of requirements implemented
 2. **Professional Quality:** Industry-standard patterns and best practices
 3. **Educational Value:** Clear explanations and real-time monitoring
 4. **Comprehensive Testing:** All scenarios tested and verified

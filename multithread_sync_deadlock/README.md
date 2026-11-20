@@ -1,6 +1,6 @@
-# Multithreading, Synchronization and Deadlock
+# Operating Systems Lab Tasks
 
-This folder contains advanced Operating System concepts focusing on multithreading, synchronization mechanisms, and deadlock handling.
+This folder contains Operating Systems lab programs covering threading, synchronization, deadlocks, and memory management.
 
 ## Task Files
 
@@ -104,6 +104,32 @@ This folder contains advanced Operating System concepts focusing on multithreadi
 
 **Run with:** `python task4_deadlock_bankers_algorithm.py`
 
+### 5. task5_paging_segmentation.py
+**Paging and Segmentation (5 marks)**
+- Calculates page number and offset, validates the page-table entry, and translates to a physical address
+- Rejects unmapped pages and page-table references outside the table
+- Validates segment offsets against the limit and calculates segmented physical addresses
+- Displays intermediate calculations
+
+**Run with:** `python task5_paging_segmentation.py`
+
+### 6. task6_demand_paging_replacement.py
+**Demand Paging, Page Replacement and Thrashing (5 marks)**
+- Runs FIFO, LRU, and Optimal on the same reference string and frame counts
+- Displays each hit or fault, frame state, totals, and ratios
+- Compares algorithms and demonstrates a high-fault cyclic working set as a simplified thrashing example
+
+**Run with:** `python task6_demand_paging_replacement.py`
+
+### 7. task7_contiguous_allocation_swapping.py
+**Contiguous Allocation, Swapping and Address Translation (5 marks)**
+- Runs First Fit, Best Fit, and Worst Fit with fresh block data for each method
+- Displays allocated/unallocated processes and remaining block sizes
+- Validates base/limit address translation
+- Releases an outgoing process and attempts to allocate an incoming process, showing memory before and after
+
+**Run with:** `python task7_contiguous_allocation_swapping.py`
+
 ## Current Implementation Status
 
 ### ✅ **Task 1 - Thread Creation & Models**
@@ -172,7 +198,7 @@ This folder contains advanced Operating System concepts focusing on multithreadi
 ## Requirements
 
 - Python 3.x
-- Standard library only (threading, time, math, random)
+- Standard library only
 - Cross-platform compatible (Windows/Linux)
 - No external dependencies
 

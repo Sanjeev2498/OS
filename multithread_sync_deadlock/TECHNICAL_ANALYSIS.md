@@ -1,4 +1,4 @@
-# Technical Analysis: All 4 Tasks - What's Used and How It Works
+# Technical Analysis: All 7 Tasks - What's Used and How It Works
 
 ## Quick Reference Summary
 
@@ -8,6 +8,9 @@
 | **Task 2** | Race Conditions | `Lock()`, `Semaphore()`, `with` statement | Demonstrate and fix data races |
 | **Task 3** | Classical Problems | `Lock()`, `Semaphore(count)` | Solve synchronization challenges |
 | **Task 4** | Deadlock Handling | `acquire(timeout)`, Banker's Algorithm | Prevent, detect, and recover from deadlocks |
+| **Task 5** | Paging and Segmentation | Integer division/modulo, page table, base/limit | Validate and translate logical addresses |
+| **Task 6** | Demand Paging | FIFO, LRU, Optimal replacement | Compare page faults, hits, and frame states |
+| **Task 7** | Contiguous Allocation | First/Best/Worst Fit, process/block state | Allocate memory, translate addresses, and simulate swapping |
 
 ---
 
@@ -736,6 +739,12 @@ def transaction():
 - **Avoidance**: Banker's Algorithm (safe states)
 - **Detection**: Timeouts, resource graphs
 - **Recovery**: Release, terminate, rollback
+
+### Memory Management:
+- **Paging**: Page-number/offset calculation and page-table validation
+- **Segmentation**: Segment-limit validation and base-plus-offset translation
+- **Page Replacement**: Same reference string for FIFO, LRU, and Optimal
+- **Contiguous Allocation**: First Fit, Best Fit, Worst Fit, and swapping
 
 ---
 
